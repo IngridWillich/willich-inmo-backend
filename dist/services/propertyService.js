@@ -54,8 +54,7 @@ async function updateProperty(id, data, token) {
         formData.append("bedrooms", String(data.bedrooms));
     if (data.bathrooms)
         formData.append("bathrooms", String(data.bathrooms));
-    if (data.area)
-        formData.append("area", data.area);
+    //if (data.area) formData.append("area", data.area);
     if (data.description)
         formData.append("description", data.description);
     if (data.tipo)

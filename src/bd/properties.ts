@@ -10,7 +10,7 @@ export interface Property {
   imageSrc: string[];
 }
 export const properties: Property[] = [];
-// Función para agregar una nueva propiedad con múltiples imágenes
+
 export const addProperty = (
   title: string,
   price: string,
@@ -19,7 +19,7 @@ export const addProperty = (
   bathrooms: number,
   area: string,
   description: string,
-  imageSrc: string[], // Acepta múltiples imágenes
+  imageSrc: string[], 
   
 ): Property => {
   const newProperty: Property = {
@@ -31,7 +31,7 @@ export const addProperty = (
     bathrooms,
     area,
     description,
-    imageSrc, // Ahora es un array de imágenes
+    imageSrc, 
    
 
   };

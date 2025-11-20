@@ -77,7 +77,7 @@ export async function updateProperty(
   if (data.location) formData.append("location", data.location);
   if (data.bedrooms) formData.append("bedrooms", String(data.bedrooms));
   if (data.bathrooms) formData.append("bathrooms", String(data.bathrooms));
-  if (data.area) formData.append("area", data.area);
+  //if (data.area) formData.append("area", data.area);
   if (data.description) formData.append("description", data.description);
   if (data.tipo) formData.append("tipo", data.tipo);
   if (data.estado) formData.append("estado", data.estado);

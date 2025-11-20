@@ -1,4 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Tenant } from "./Tenant";
+import { OneToMany } from "typeorm";
 
 @Entity("properties")
 export class Property {
@@ -42,4 +44,10 @@ estado!: "disponible" | "reservado" | "vendido";
 //
     @Column("text", { name: "imagesrc", array: true })
     imageSrc!: string[];
+
+    @OneToMany(() => Tenant, tenant => tenant.propiedad)
+tenants!: Tenant[];
+
 }
+
+

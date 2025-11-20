@@ -1,6 +1,5 @@
 import "dotenv/config";
 import dotenv from "dotenv";
-// Configuramos dotenv para usar un archivo de entorno específico
 dotenv.config({ path: "./src/config/.env" });
 export const PORT = Number(process.env.PORT) || 3000;
 export const PROTO = process.env.PROTO || "http";

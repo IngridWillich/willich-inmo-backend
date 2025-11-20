@@ -13,8 +13,6 @@ const authMiddleware_1 = require("./middlewares/authMiddleware");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
-// Rutas de la API para las citas
-// Rutas para los usuarios
 app.get("/api/properties", async (req, res) => {
     try {
         const propertyRepo = data_source_1.AppDataSource.getRepository(Property_1.Property);
@@ -105,6 +103,4 @@ app.delete("/api/properties/:id", authMiddleware_1.verifyToken, async (req, res)
         res.status(500).json({ message: "Server error", error });
     }
 });
-////////////////////////hasta aca funcionando 
-////searchbar con filtros
 exports.default = app;

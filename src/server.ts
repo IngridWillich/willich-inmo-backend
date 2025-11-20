@@ -1,4 +1,3 @@
-
 import express, { Express } from 'express';
 import cors from 'cors';
 import { PORT } from './config/envs';
@@ -20,10 +19,9 @@ const app: Express = express();
 app.use(cors());
 app.use(express.json());
 
-// Rutas de la API para las citas
 
 
-// Rutas para los usuarios
+
 
 
 app.get("/api/properties", async (req, res) => {
@@ -136,35 +134,6 @@ app.delete("/api/properties/:id", verifyToken, async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 });
-
-////////////////////////hasta aca funcionando 
-////searchbar con filtros
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,5 +1,3 @@
-
-
 import { Request, Response } from "express";
 import { AppDataSource } from "../config/data-source";
 import { Property } from "../entities/Property";
@@ -68,7 +66,6 @@ export const getProperties = async (req: Request, res: Response) => {
   }
 };
 
-// DELETE property
 export const deleteProperty = async (req: Request, res: Response) => {
     try {
       const propertyId = parseInt(req.params.id);
@@ -88,7 +85,6 @@ export const deleteProperty = async (req: Request, res: Response) => {
     }
   };
   
-  // PUT (edit) property
   export const updateProperty = async (req: Request, res: Response) => {
     try {
       const propertyId = parseInt(req.params.id);
@@ -112,7 +108,7 @@ export const deleteProperty = async (req: Request, res: Response) => {
         estado
       } = req.body;
   
-      // actualiza los campos si vienen nuevos valores
+      
       property.title = title || property.title;
       property.price = price || property.price;
       property.location = location || property.location;
@@ -123,9 +119,7 @@ export const deleteProperty = async (req: Request, res: Response) => {
       property.tipo = tipo || property.tipo;
       property.estado = estado || property.estado;
 
-  
-      // si hay nuevas imágenes
-      if (req.files && (req.files as Express.Multer.File[]).length > 0) {
+        if (req.files && (req.files as Express.Multer.File[]).length > 0) {
         const imageSrc = (req.files as Express.Multer.File[]).map(
           (file) => `/uploads/${file.filename}`
         );
@@ -140,9 +134,7 @@ export const deleteProperty = async (req: Request, res: Response) => {
     }
   };
   
-  /////////////////
-
-  export const searchProperties = async (req: Request, res: Response) => {
+   export const searchProperties = async (req: Request, res: Response) => {
     try {
       const results = await searchPropertiesService(req.query);
       return res.status(200).json(results);

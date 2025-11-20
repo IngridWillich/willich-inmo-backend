@@ -47,7 +47,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
         const { username, password } = req.body;
         console.log("Datos recibidos para login:", { username, password });
         const credential = await validateCredentials(username, password);
-        const user = await getUserByIdService(credential.id); // debería ser con findUserByCredentialId
+        const user = await getUserByIdService(credential.id); 
         res.status(200).json({
             loggin: true,
             user

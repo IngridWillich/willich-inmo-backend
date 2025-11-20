@@ -2,7 +2,7 @@ export class UserDto {
     id: number;
     name: string;
     email: string;
-    birthDate: string; // Puede ser `Date` si necesitas trabajar con objetos de fecha
+    birthDate: string; 
     dni: string;
     username: string;
 

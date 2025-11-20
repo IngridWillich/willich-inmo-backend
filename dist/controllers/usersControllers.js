@@ -47,7 +47,7 @@ const loginUser = async (req, res) => {
         const { username, password } = req.body;
         console.log("Datos recibidos para login:", { username, password });
         const credential = await (0, credentialsService_1.validateCredentials)(username, password);
-        const user = await (0, usersService_1.getUserByIdService)(credential.id); // debería ser con findUserByCredentialId
+        const user = await (0, usersService_1.getUserByIdService)(credential.id);
         res.status(200).json({
             loggin: true,
             user

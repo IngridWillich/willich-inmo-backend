@@ -5,7 +5,7 @@ class UserDto {
     id;
     name;
     email;
-    birthDate; // Puede ser `Date` si necesitas trabajar con objetos de fecha
+    birthDate;
     dni;
     username;
     constructor(id, name, email, birthDate, dni, username) {

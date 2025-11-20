@@ -1,5 +1,3 @@
-
-
 import { Router, Request, Response } from "express";
 import { properties } from "../bd/properties";
 import upload from "../middlewares/upload"; 
@@ -11,15 +9,14 @@ import { verifyToken } from "../middlewares/authMiddleware";
 
 const router = Router();
 
-// Obtener todas las propiedades
 router.get("/", getProperties);
-// Agregar propiedad con imágenes (único endpoint para crear propiedades)
+
 router.post("/",verifyToken ,upload.array("images", 30), addProperty )
-// Editar
+
 router.put("/:id", verifyToken, upload.array("images", 30), updateProperty);
-// Eliminar
+
 router.delete("/:id", verifyToken, deleteProperty);
-// Buscar
+
 router.get("/search", searchProperties);
 
 
